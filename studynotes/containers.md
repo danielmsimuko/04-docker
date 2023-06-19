@@ -9,3 +9,5 @@ Swarm allows you to build a distributed cluster of docker machines to run contai
 `$ sudo docker swarm init` initialises a new docker swarm cluster 
 
 `$ sudo docker node ls` prints out docker swarm info
+
+`docker swarm init --advertise-addr <swarm manager private IP` initiates a docker swarm manager
