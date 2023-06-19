@@ -19,4 +19,12 @@ docker swarm join --token SWMTKN-1-2javq7ub3fhf1dtjz6piwg17rw8ffvkgz2h27e2zistnv
 ```
 You can confirm if the node has joined to: `docker node ls`
 
-h
+the output should be: 
+
+```
+cloud_user@ip-10-0-1-101:~$ sudo docker node ls
+ID                            HOSTNAME        STATUS    AVAILABILITY   MANAGER STATUS   ENGINE VERSION
+wl14y8fs9b7mp9hgvgqxc8el7 *   ip-10-0-1-101   Ready     Active         Leader           20.10.21
+tq9fj6yhz44c7utddwgs775k1     ip-10-0-1-102   Ready     Active                          20.10.21
+
+```
