@@ -2,9 +2,6 @@
 
 Docker community edition is free OS Docker Engine 
 
-## Introduction 
-
-
 ## Installation + Config
 
 Installing on a CentOS 7 Server: 
