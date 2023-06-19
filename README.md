@@ -61,10 +61,11 @@ To generate this message, Docker took the following steps:
 ```
 ## Other Common commands 
 
+to check the status of docker: 
+
+```
 daniel@NT2201LB:~$ sudo systemctl status docker
 ● docker.service - Docker Application Container Engine
      Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
      Active: active (running) since Mon 2023-06-19 10:51:03 BST; 3min 21s ago
-TriggeredBy: ● docker.socket
-       Docs: https://docs.docker.com
-   Main PID: 37145 (dockerd)
+```
