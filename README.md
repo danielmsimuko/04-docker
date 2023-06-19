@@ -43,8 +43,8 @@ this will produce an output that looks like:
 daniel@NT2201LB:~$ sudo docker run hello-world
 Unable to find image 'hello-world:latest' locally
 latest: Pulling from library/hello-world
-719385e32844: Pull complete
-Digest: sha256:c2e23624975516c7e27b1b25be3682a8c6c4c0cea011b791ce98aa423b5040a0
+719385e32342: Pull complete
+Digest: sha256:c2e20
 Status: Downloaded newer image for hello-world:latest
 
 Hello from Docker!
