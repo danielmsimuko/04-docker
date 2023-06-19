@@ -17,3 +17,6 @@ Output to the command then allows for worker nodes to be made available using co
 ```
 docker swarm join --token SWMTKN-1-2javq7ub3fhf1dtjz6piwg17rw8ffvkgz2h27e2zistnv628co-dr0ymhq1sj3ib5obztchntrkt 10.0.1.101:2377
 ```
+You can confirm if the node has joined to: `docker node ls`
+
+h
