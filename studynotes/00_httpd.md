@@ -23,21 +23,23 @@ confirm container is running using: `$ docker ps` should see an output like:
 CONTAINER ID   IMAGE          COMMAND              CREATED         STATUS         PORTS                                   NAMES
 51d9e1e2874b   httpd:latest   "httpd-foreground"   6 seconds ago   Up 5 seconds   0.0.0.0:8080->80/tcp, :::8080->80/tcp   httpd
 ```
-[cloud_user@ip-10-0-1-224 ~]$ git clone https://github.com/linuxacademy/content-widget-factory-inc
-Cloning into 'content-widget-factory-inc'...
 
-[cloud_user@ip-10-0-1-224 ~]$ cd content-widget-factory-inc/
+## Addtional: 
 
-[cloud_user@ip-10-0-1-224 content-widget-factory-inc]$ cd web/
+To clone an already built repo and deploy it: 
 
-[cloud_user@ip-10-0-1-224 web]$ ll
+`$ git clone https://github.com/linuxacademy/content-widget-factory-inc`
+
+list the contents of clone using `$ ll`
+
+```
 total 16
 drwxrwxr-x. 2 cloud_user cloud_user   76 Jun 20 18:07 img
 -rw-rw-r--. 1 cloud_user cloud_user 3059 Jun 20 18:07 index.html
 -rw-rw-r--. 1 cloud_user cloud_user 2910 Jun 20 18:07 quote.html
 -rw-rw-r--. 1 cloud_user cloud_user 2611 Jun 20 18:07 support.html
 -rw-rw-r--. 1 cloud_user cloud_user 2645 Jun 20 18:07 widgets.html
-
+```
 [cloud_user@ip-10-0-1-224 web]$ docker stop httpd
 httpd
 
