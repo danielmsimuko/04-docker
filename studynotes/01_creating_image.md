@@ -36,12 +36,11 @@ example/widgetfactory.v1   latest    9db82f2f157f   2 minutes ago   278MB
 httpd                      latest    ad303d7f80f9   6 days ago      168MB
 ```
 
+run the image: ``$ docker run -d --name website -p 8081:80 web1``
 
-[cloud_user@ip-10-0-1-21 ~]$ docker run -d --name website -p 8081:80 web1
-45fc25b6fc74114f63e03ea3523fe7d19561de155be0e78ca895b5e142bf1d04
-
-[cloud_user@ip-10-0-1-21 ~]$ docker ps
-CONTAINER ID   IMAGE                    COMMAND              CREATED          STATUS          PORTS                                   NAMES
-45fc25b6fc74   web1   "httpd-foreground"   30 seconds ago   Up 29 seconds   0.0.0.0:8081->80/tcp, :::8081->80/tcp   website
-65d87d720862   httpd                    "httpd-foreground"   8 minutes ago    Up 8 minutes    80/tcp                                  webtemplate
-
+```
+$ docker ps
+CONTAINER ID   IMAGE            COMMAND              CREATED          STATUS          PORTS                                   NAMES
+45fc25b6fc74   web1             "httpd-foreground"   30 seconds ago   Up 29 seconds   0.0.0.0:8081->80/tcp, :::8081->80/tcp   website
+65d87d720862   httpd            "httpd-foreground"   8 minutes ago    Up 8 minutes    80/tcp                                  webtemplate
+```
