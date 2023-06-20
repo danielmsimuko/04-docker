@@ -9,3 +9,9 @@ run a demo webtemplate to ensure smooth ops `$ docker run --name webtemplate -d 
 now we enter container: `$ docker exec -it webtemplate bash`
 
 update and install git `$ apt update && apt install git -y`
+
+
+clone website and send it to desired repo 
+
+root@65d87d720862:/usr/local/apache2# git clone  https://github.com/linuxacademy/content-widget-factory-inc.git /tmp/widget-factory-inc
+
