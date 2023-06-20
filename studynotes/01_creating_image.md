@@ -20,3 +20,25 @@ Remove the index.html file:
 rm htdocs/index.html
 Copy the webcode from /tmp/ to the htdocs/ folder:
 cp -r /tmp/widget-factory-inc/web/* htdocs/
+
+to create an image from container. we need container id 
+
+CONTAINER ID   IMAGE     COMMAND              CREATED         STATUS         PORTS     NAMES
+65d87d720862   httpd     "httpd-foreground"   6 minutes ago   Up 6 minutes   80/tcp    webtemplate
+
+using container id, create docker image:$ docker commit 65d87d720862 web1
+sha256:b579921b685ba173d9978f5e72073ac87580dd5ab54a6164e8b93b0ad423bbca
+[cloud_user@ip-10-0-1-21 ~]$ docker images
+REPOSITORY                 TAG       IMAGE ID       CREATED         SIZE
+web1                       latest    b579921b685b   3 seconds ago   189MB
+example/widgetfactory.v1   latest    9db82f2f157f   2 minutes ago   278MB
+httpd                      latest    ad303d7f80f9   6 days ago      168MB
+
+[cloud_user@ip-10-0-1-21 ~]$ docker run -d --name website -p 8081:80 web1
+45fc25b6fc74114f63e03ea3523fe7d19561de155be0e78ca895b5e142bf1d04
+
+[cloud_user@ip-10-0-1-21 ~]$ docker ps
+CONTAINER ID   IMAGE                    COMMAND              CREATED          STATUS          PORTS                                   NAMES
+45fc25b6fc74   web1   "httpd-foreground"   30 seconds ago   Up 29 seconds   0.0.0.0:8081->80/tcp, :::8081->80/tcp   website
+65d87d720862   httpd                    "httpd-foreground"   8 minutes ago    Up 8 minutes    80/tcp                                  webtemplate
+
