@@ -1,16 +1,15 @@
 ## Creating a simple html webpage using httpd and nginx via docker containers 
 
+log into vm via: `ssh cloud_user@3.83.64.78`
 
-
-
-PS C:\Users\daniel.msimuko> ssh cloud_user@3.83.64.78
-
-[cloud_user@ip-10-0-1-224 ~]$ docker version
+run `$ docker version` and make sure to get output looking like: 
+```
 Client: Docker Engine - Community
  Version:           24.0.2
- API version:       1.43
+ API version:       1.02
+```
+pull latest docker image via`$ docker pull httpd:latest`
 
-[cloud_user@ip-10-0-1-224 ~]$ docker pull httpd:latest
 latest: Pulling from library/httpd
 5b5fe70539cd: Pull complete
 
