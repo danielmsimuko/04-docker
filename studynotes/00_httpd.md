@@ -40,17 +40,13 @@ drwxrwxr-x. 2 cloud_user cloud_user   76 Jun 20 18:07 img
 -rw-rw-r--. 1 cloud_user cloud_user 2611 Jun 20 18:07 support.html
 -rw-rw-r--. 1 cloud_user cloud_user 2645 Jun 20 18:07 widgets.html
 ```
-[cloud_user@ip-10-0-1-224 web]$ docker stop httpd
-httpd
+ 
+first stop docker image using `$ docker stop httpd` then delete image using `$ docker rm httpd`
 
-[cloud_user@ip-10-0-1-224 web]$ docker rm httpd
-httpd
+Re run docker run command using local files: `$ docker run --name httpd -p 8080:80 -v $(pwd):/usr/local/apache2/htdocs:ro -d httpd:latest`
 
-[cloud_user@ip-10-0-1-224 web]$
-[cloud_user@ip-10-0-1-224 web]$ docker run --name httpd -p 8080:80 -v $(pwd):/usr/local/apache2/htdocs:ro -d httpd:latest
-2178165dc2c9b00e6c738c735a00e199e1300b918abc95e09a3270755ca617b7
-
-[cloud_user@ip-10-0-1-224 web]$ docker ps
+confirm it is running using `$ docker ps`
+```
 CONTAINER ID   IMAGE          COMMAND              CREATED          STATUS          PORTS                                   NAMES
 2178165dc2c9   httpd:latest   "httpd-foreground"   11 seconds ago   Up 10 seconds   0.0.0.0:8080->80/tcp, :::8080->80/tcp   httpd
-
+```
