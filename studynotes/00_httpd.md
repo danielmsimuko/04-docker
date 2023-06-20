@@ -16,4 +16,32 @@ latest: Pulling from library/httpd
 CONTAINER ID   IMAGE          COMMAND              CREATED         STATUS         PORTS                                   NAMES
 51d9e1e2874b   httpd:latest   "httpd-foreground"   6 seconds ago   Up 5 seconds   0.0.0.0:8080->80/tcp, :::8080->80/tcp   httpd
 
-[cloud_user@ip-10-0-1-224 ~]$
+[cloud_user@ip-10-0-1-224 ~]$ git clone https://github.com/linuxacademy/content-widget-factory-inc
+Cloning into 'content-widget-factory-inc'...
+
+[cloud_user@ip-10-0-1-224 ~]$ cd content-widget-factory-inc/
+
+[cloud_user@ip-10-0-1-224 content-widget-factory-inc]$ cd web/
+
+[cloud_user@ip-10-0-1-224 web]$ ll
+total 16
+drwxrwxr-x. 2 cloud_user cloud_user   76 Jun 20 18:07 img
+-rw-rw-r--. 1 cloud_user cloud_user 3059 Jun 20 18:07 index.html
+-rw-rw-r--. 1 cloud_user cloud_user 2910 Jun 20 18:07 quote.html
+-rw-rw-r--. 1 cloud_user cloud_user 2611 Jun 20 18:07 support.html
+-rw-rw-r--. 1 cloud_user cloud_user 2645 Jun 20 18:07 widgets.html
+
+[cloud_user@ip-10-0-1-224 web]$ docker stop httpd
+httpd
+
+[cloud_user@ip-10-0-1-224 web]$ docker rm httpd
+httpd
+
+[cloud_user@ip-10-0-1-224 web]$
+[cloud_user@ip-10-0-1-224 web]$ docker run --name httpd -p 8080:80 -v $(pwd):/usr/local/apache2/htdocs:ro -d httpd:latest
+2178165dc2c9b00e6c738c735a00e199e1300b918abc95e09a3270755ca617b7
+
+[cloud_user@ip-10-0-1-224 web]$ docker ps
+CONTAINER ID   IMAGE          COMMAND              CREATED          STATUS          PORTS                                   NAMES
+2178165dc2c9   httpd:latest   "httpd-foreground"   11 seconds ago   Up 10 seconds   0.0.0.0:8080->80/tcp, :::8080->80/tcp   httpd
+
